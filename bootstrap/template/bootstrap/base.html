@@ -1,0 +1,51 @@
+{% get_current_language as LANGUAGE_CODE %}<!DOCTYPE html>
+{% load compress %}
+{% load staticfiles %}
+<html lang="{% LANGUAGE_CODE %}" {% block html_attributes %}{% endblock html_attributes %}>
+      <head>
+        {% block head %}
+            <title>{% block head_title %}{% endblock head_title %}</title>
+            {% block meta %}
+                <!-- your meta tags here -->
+            {% endblock meta %}
+            {% block css %}
+                <!-- CSS -->
+                {% block bootstrap_css %}
+                <!-- Bootstrap -->
+                <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+                {% endblock bootstrap_css %}
+            {% endblock css %}
+            {% block external_css %}
+                <!-- EXTERNAL CSS -->
+            {% endblock external_css %}
+        {% endblock head %}
+    </head>
+    <body class="{% block bodyclasses %}{% endblock bodyclasses %}" {% block bodyattributes %}{% endblock bodyattributes %}>
+        {% block body %}
+            {% block body_content %}
+                <!-- BODY CONTENT -->
+            {% endblock body_content %}
+
+            {% block js %}
+                <!-- JS -->
+                {% block bootstrap_js %}
+                <!-- bootstrap -->
+                <script src="js/bootstrap.min.js"></script>
+
+                <script type="text/javascript">
+                    /* IE compatibility with semantic HTML5 tags */
+                    document.createElement('header');
+                    document.createElement('footer');
+                    document.createElement('section');
+                    document.createElement('aside');
+                    document.createElement('nav');
+                    document.createElement('article');
+                </script>
+                {% endblock bootstrap_js %}
+            {% endblock js %}
+            {% block external_js %}
+                <!-- EXTERNAL JS -->
+            {% endblock external_js %}
+        {% endblock body %}
+    </body>
+</html>
