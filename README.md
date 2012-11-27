@@ -1,4 +1,1 @@
-django-bootstrap
-================
-
-Simple twitter bootstrap integration into django
+# django-bootstrap: simplified integration of twitter bootstrap
