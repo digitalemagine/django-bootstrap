@@ -1,7 +1,6 @@
 {% get_current_language as LANGUAGE_CODE %}<!DOCTYPE html>
-{% load compress %}
 {% load staticfiles %}
-<html lang="{% LANGUAGE_CODE %}" {% block html_attributes %}{% endblock html_attributes %}>
+<html lang="{{ LANGUAGE_CODE }}" {% block html_attributes %}{% endblock html_attributes %}>
       <head>
         {% block head %}
             <title>{% block head_title %}{% endblock head_title %}</title>
@@ -12,7 +11,7 @@
                 <!-- CSS -->
                 {% block bootstrap_css %}
                 <!-- Bootstrap -->
-                <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+                <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
                 {% endblock bootstrap_css %}
             {% endblock css %}
             {% block external_css %}
@@ -22,15 +21,17 @@
     </head>
     <body class="{% block bodyclasses %}{% endblock bodyclasses %}" {% block bodyattributes %}{% endblock bodyattributes %}>
         {% block body %}
-            {% block body_content %}
-                <!-- BODY CONTENT -->
-            {% endblock body_content %}
-
+            {% block body_layout %}
+                <!-- body layout -->
+                {% block body_content %}
+                    <!-- BODY CONTENT -->
+                {% endblock body_content %}
+            {% endblock body_layout %}
             {% block js %}
                 <!-- JS -->
                 {% block bootstrap_js %}
                 <!-- bootstrap -->
-                <script src="js/bootstrap.min.js"></script>
+                <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
                 <script type="text/javascript">
                     /* IE compatibility with semantic HTML5 tags */
