@@ -1,0 +1,18 @@
+{% extends "bootstrap/base.html" %}
+{% load staticfiles %}
+
+
+
+                {% block bootstrap_css %}
+                {{ block.super }}
+                <!-- jasny-bootstrap -->
+                <link href="{% static 'jasny-bootstrap/css/jasny-bootstrap.min.css' %}" rel="stylesheet" media="screen" />
+                <link href="{% static 'jasny-bootstrap/css/jasny-bootstrap-responsive.min.css' %}" rel="stylesheet" media="screen" />
+                {% endblock bootstrap_css %}
+
+
+                {% block bootstrap_js %}
+                {{ block.super }}
+                <!-- jasny-bootstrap -->
+                <script src="{% static 'jasny-bootstrap/js/jasny-bootstrap.min.js' %}"></script>
+                {% endblock bootstrap_js %}
