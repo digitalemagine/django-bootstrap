@@ -11,6 +11,6 @@ setup(
     url='http://github.com:digitalemagine/django-bootstrap.git',    
     license='Open Source',
     description='Simple integration of bootstrap by twitter into django',
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     zip_safe=False,
 )
