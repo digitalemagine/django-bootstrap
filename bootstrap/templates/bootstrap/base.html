@@ -11,7 +11,8 @@
                 <!-- CSS -->
                 {% block bootstrap_css %}
                 <!-- Bootstrap -->
-                <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+                <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen" />
+                <link href="{% static 'bootstrap-addons/css/bootstrap-form-input-table.css' %}" rel="stylesheet" media="screen" />
                 {% endblock bootstrap_css %}
             {% endblock css %}
             {% block external_css %}
@@ -32,7 +33,7 @@
                 {% block bootstrap_js %}
                 <!-- bootstrap -->
                 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-
+                <script src="{% static 'bootstrap-addons/js/bootstrap-form-input-table.js' %}"></script>
                 <script type="text/javascript">
                     /* IE compatibility with semantic HTML5 tags */
                     document.createElement('header');

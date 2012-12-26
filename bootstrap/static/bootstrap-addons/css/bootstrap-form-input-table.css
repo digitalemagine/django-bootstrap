@@ -1,0 +1,14 @@
+/*
+    Document   : bootstrap-form-input-table
+    Created on : 26 déc. 2012, 15:24:41
+    Author     : scrosta
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.table-selectable > tbody > tr.row-selected > td {
+    background-color: #B3F9CC;
+    /*border-color: #00A;*/
+
+}
+
