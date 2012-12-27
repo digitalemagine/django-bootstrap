@@ -4,13 +4,13 @@ django-bootstrap
 simplified integration of twitter bootstrap
 
 
-* Author: Stefano Crost
+* Author: Stefano Crosta
 * Licence: BSD
 * Compatibility: Django 1.5+
 
 Simply install this package to get bootstrap compressed media.
 
-Currently using bootstrap v. 2.2.1
+Currently using bootstrap with Jasny Extensions version 2.1.1-j2 (http://jasny.github.com/bootstrap/)
 
 Includes out of the box support for floppyforms; just use the 'bootstrap.html' layout,
 
@@ -26,6 +26,7 @@ This means that in order to produce bootstrap forms you only need to:
 
 and that's all!
 
-For bootstrap please see the `bootstrap official documentation`_
+For bootstrap please see the `bootstrap official documentation`_ and `jasny bootstrap documentation`
 
 .. _`bootstrap official documentation`: http://twitter.github.com/bootstrap/index.html
+.. _`jasny bootstrap documentation`: http://jasny.github.com/bootstrap/index.html
