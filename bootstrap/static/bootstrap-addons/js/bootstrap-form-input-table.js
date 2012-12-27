@@ -14,13 +14,12 @@
 $(document).ready(function() {
     $('.table-selectable').delegate('tbody > tr', 'click', function() {
 //        console.log('Table Selectable Row Clicked!');
-        var inputSelector = 'input[name^="answer"]';
         var selectedClass = 'row-selected';
-        var $checkbox = $(this).find(inputSelector);
+        var $checkbox = $(this).find('input');
         $checkbox.prop('checked', !$checkbox.prop('checked'));
 
         $('.table-selectable > tbody > tr').each(function() {
-            $checkbox = $(this).find(inputSelector);
+            $checkbox = $(this).find('input'); // i don't expect other inputs to be in the table!
             $(this).toggleClass(selectedClass, $checkbox.prop('checked'));
         })
     });
