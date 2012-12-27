@@ -1,5 +1,5 @@
 /*!
- * Jasny Bootstrap Responsive Extensions j2
+ * Jasny Bootstrap Responsive Extensions j3
  *
  * Copyright 2012 Jasny BV
  * Licensed under the Apache License v2.0
@@ -57,6 +57,37 @@
     float: none;
     width: auto;
     margin: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .table-responsive tr {
+    display: block;
+    padding: 8px;
+  }
+  .table-bordered.table-responsive tr {
+    border: 1px solid #DDD;
+    border-top: 0;
+    border-right: 0;
+  }
+  .table-responsive td,
+  .table-responsive th {
+    display: block;
+    padding: 0;
+    font-weight: normal;
+    border: none;
+  }
+  .table-responsive th {
+    font-style: italic;
+  }
+  .responsive-strong {
+    font-weight: bold;
+  }
+  .responsive-em {
+    font-style: italic;
+  }
+  .responsive-soft {
+    color: #999;
   }
 }
 
