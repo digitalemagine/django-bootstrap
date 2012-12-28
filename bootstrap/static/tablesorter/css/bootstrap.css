@@ -42,7 +42,7 @@ Using  Dropbox Theme (by thezoggy)
     background-size: 9px 18px;
     background-position: right center;
     background-repeat: no-repeat;
-    background-color: #EAEAEA; /* hint that something might happen if */
+    background-color: #F0F0F0; /* hint that something might happen if */
 }
 .tablesorter th:hover i,
 .tablesorter thead td:hover i,
