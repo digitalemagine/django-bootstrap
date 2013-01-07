@@ -1,3 +1,7 @@
+tablesorter integrated back into bootstrap ;-)
+
+-----
+
 tablesorter is a jQuery plugin for turning a standard HTML table with THEAD and TBODY tags into a sortable table without page refreshes.
 tablesorter can successfully parse and sort many types of data including linked data in a cell.
 
@@ -58,7 +62,7 @@ View the [complete listing here](https://github.com/Mottie/tablesorter/wiki/Chan
 * Fixed `sortReset` bug - see [issue #167](https://github.com/Mottie/tablesorter/issues/167).
 * Fixed an issue with the pager resetting to the first page after every sort.
 * Fixed javascript errors popping up when initializing the plugin on an empty table. Fixes [issue #206](https://github.com/Mottie/tablesorter/issues/206).
-* 
+*
 
 #### Version 2.6.2 (12/20/2012)
 
