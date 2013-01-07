@@ -34,6 +34,7 @@ Using  Dropbox Theme (by thezoggy)
 	text-align: left;
     */
     position: relative;
+    padding-right: 14px; /* leave some space for the icon */
 }
 .tablesorter th:hover,
 .tablesorter thead td:hover,
@@ -71,10 +72,10 @@ Using  Dropbox Theme (by thezoggy)
 }
 .tablesorter .tablesorter-header i {
     position: absolute;
-    right: 10px;
+    right: 4px;
 	width: 9px;
 	height: 9px;
-	padding: 4px 20px 4px 4px;
+	padding: 5px 20px 4px 4px; /* argh does not sound the correct solution for a variable row heigth... but it's a nice quick and dirty */
 	cursor: pointer;
 	background-position: center right;
 	background-repeat: no-repeat;
