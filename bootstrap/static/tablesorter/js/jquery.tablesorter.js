@@ -87,8 +87,8 @@
 				cssProcessing    : 'tablesorter-processing', // processing icon applied to header during sort/filter
 
 				// *** selectors
-				selectorHeaders  : '> thead th, > thead td',
-				selectorSort     : 'th, td',   // jQuery selector of content within selectorHeaders that is clickable to trigger a sort
+				selectorHeaders  : '> thead tr:not([data-tablesorter-ignore]) th, > thead td',
+				selectorSort     : 'tr:not([data-tablesorter-ignore]) th, td',   // jQuery selector of content within selectorHeaders that is clickable to trigger a sort
 				selectorRemove   : '.remove-me',
 
 				// *** advanced
