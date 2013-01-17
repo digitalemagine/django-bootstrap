@@ -16,10 +16,10 @@ Using  Dropbox Theme (by thezoggy)
 }
 
 /* header */
-.tablesorter th,
-.tablesorter thead td,
-.tablesorter tfoot th,
-.tablesorter tfoot td {
+.tablesorter tr:not([data-tablesorter-ignore]) th,
+.tablesorter thead tr:not([data-tablesorter-ignore]) td,
+.tablesorter tfoot tr:not([data-tablesorter-ignore]) th,
+.tablesorter tfoot tr:not([data-tablesorter-ignore]) td {
     /*
 	background-color: #f0f9ff;
 	border-color: #82cffa #e7f2fb #96c4ea;
@@ -53,8 +53,8 @@ Using  Dropbox Theme (by thezoggy)
 }
 
 .tablesorter .header,
-.tablesorter thead tr,
-.tablesorter .tablesorter-headerRow {
+.tablesorter .tablesorter-headerRow,
+.tablesorter thead tr:not([data-tablesorter-ignore]) {
     /*
 	background-color: #f0f9ff;
 	border-bottom: 1px solid #96c4ea;
