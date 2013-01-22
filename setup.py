@@ -6,10 +6,10 @@ setup(
     name='django-bootstrap',
     version='0.1.0',
     author=u'Stefano Crosta',
-    author_email='stefano@digitalemagine.com',    
+    author_email='stefano@digitalemagine.com',
     packages=find_packages(),
-    include_package_data=True
-    url='http://github.com:digitalemagine/django-bootstrap.git',    
+    include_package_data=True,
+    url='http://github.com:digitalemagine/django-bootstrap.git',
     license='Open Source',
     description='Simple integration of bootstrap by twitter into django',
     long_description=open('README.rst').read(),
