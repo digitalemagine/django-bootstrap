@@ -624,12 +624,13 @@
   var Typeahead = function (element, options) {
     this.$element = $(element)
     this.options = $.extend({}, $.fn.typeahead.defaults, options)
-    if (this.options.target) this.$target = $(this.options.target)
+    //if (this.options.target)
+    this.$target = $(this.$element.data('destination')) || $(this.options.target)
     this.matcher = this.options.matcher || this.matcher
     this.sorter = this.options.sorter || this.sorter
     this.highlighter = this.options.highlighter || this.highlighter
     this.updater = this.options.updater || this.updater
-    this.source = this.options.source
+    this.source = this.$element.data('source') || this.options.source;
     this.strict = this.options.strict
     this.$menu = $(this.options.menu)
     this.shown = false
@@ -1071,6 +1072,7 @@
 
   $.fn.typeahead.defaults = {
     source: []
+  , target: null
   , items: 8
   , menu: '<ul class="typeahead dropdown-menu"></ul>'
   , item: '<li><a href="#"></a></li>'
