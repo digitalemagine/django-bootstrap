@@ -625,7 +625,7 @@
     this.$element = $(element)
     this.options = $.extend({}, $.fn.typeahead.defaults, options)
     //if (this.options.target)
-    this.$target = $(this.$element.data('destination')) || $(this.options.target)
+    this.$target = $(this.$element.data('target')) || $(this.options.target)
     this.matcher = this.options.matcher || this.matcher
     this.sorter = this.options.sorter || this.sorter
     this.highlighter = this.options.highlighter || this.highlighter
