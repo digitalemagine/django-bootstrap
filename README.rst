@@ -10,10 +10,14 @@ simplified integration of twitter bootstrap
 
 Simply install this package to get bootstrap compressed media.
 
+FloppyForms is a required dependency for forms (not automatically installed).
+
 Boostrap with Jasny
 -------------------
 
-Currently using bootstrap 2.2.2 (http://twitter.github.com/bootstrap/) with Jasny Extensions version j3 (http://jasny.github.com/bootstrap/)
+Currently using bootstrap 2.3.1 (http://twitter.github.com/bootstrap/) with Jasny Extensions version j6 (http://jasny.github.com/bootstrap/)
+
+Slightly modified jasny typeahead to read `target` and `source` from dataset attributes.
 
 Django bootstrap forms with FloppyForms
 ---------------------------------------
@@ -37,11 +41,17 @@ TableSorter is back
 
 Includes out of the box support for tablesorter 2.7.1 (https://github.com/mottie/tablesorter/) with a simple, bootstrape integrated style.
 
+Select2
+-------
+
+Includes the amazing Select2 (http://ivaynberg.github.com/select2/) widget - you'll never use Bootstrap `typeahed` again.
 
 Official Documentation
 ----------------------
 
-For bootstrap please see the `bootstrap official documentation`_ and `jasny bootstrap documentation`
+Just install the app and extend your templates from `bootstrap/{jasny-}base.html`
+
+Refer to the individual package documentations, eg. for bootstrap please see the `bootstrap official documentation`_ and `jasny bootstrap documentation`
 
 .. _`bootstrap official documentation`: http://twitter.github.com/bootstrap/index.html
 .. _`jasny bootstrap documentation`: http://jasny.github.com/bootstrap/index.html
