@@ -14,8 +14,10 @@
                 <!-- link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen" /-->
                 <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" media="screen" />
                 <link href="{% static 'tablesorter/css/bootstrap.css' %}" rel="stylesheet" media="screen" />
+                {% if select2 %}
                 <link href="{% static 'select2/css/select2.css' %}" rel="stylesheet" media="screen" />
                 <link href="{% static 'select2/css/select2.custom.css' %}" rel="stylesheet" media="screen" />
+                {% endif %}
                 <link href="{% static 'bootstrap-addons/css/bootstrap-form-input-table.css' %}" rel="stylesheet" media="screen" />
                 {% endblock bootstrap_css %}
             {% endblock css %}
@@ -32,17 +34,14 @@
                     <!-- BODY CONTENT -->
                 {% endblock body_content %}
             {% endblock body_layout %}
+            <div id="javascript">
             {% block js %}
                 <!-- JS -->
-                {% block bootstrap_js %}
-                <!-- bootstrap -->
-                <script src="{% static 'jquery/js/jquery-1.9.1.min.js' %}"></script>
-                <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-                <script src="{% static 'select2/js/select2.js' %}"></script>
-                <script src="{% static 'bootstrap-addons/js/underscore.js' %}"></script>
-                <script src="{% static 'tablesorter/js/jquery.tablesorter.js' %}"></script>
-                <script src="{% static 'bootstrap-addons/js/bootstrap-form-input-table.js' %}"></script>
-                <script src="{% static 'bootstrap-addons/js/jquery.floatThead.js' %}"></script>
+                {% block additional_js %}
+                <!--[if lt IE 9]>
+                    <script type="text/javascript" src="{% static 'javascript/js/html5shiv.js' %}"></script>
+                <![endif]-->
+                <!-- would it be better to use a more generic cross-browser shiv/shim? -->
                 <script type="text/javascript">
                     /* IE compatibility with semantic HTML5 tags */
                     document.createElement('header');
@@ -52,11 +51,31 @@
                     document.createElement('nav');
                     document.createElement('article');
                 </script>
+                <script type="text/javascript" src="{% static 'javascript/js/sprintf.js' %}"></script>
+                {% endblock additional_js %}
+                {% block jquery_js %}
+                <script type="text/javascript" src="{% static 'jquery/js/jquery-1.9.1.min.js' %}"></script>
+                {% endblock jquery_js %}
+                {% block select2 %}
+                <script type="text/javascript" src="{% static 'select2/js/select2.js' %}"></script>
+                {% endblock select2 %}
+                {% block tablesorter_js %}
+                <script type="text/javascript" src="{% static 'tablesorter/js/jquery.tablesorter.js' %}"></script>
+                {% endblock tablesorter_js %}
+                {% block bootstrap_js %}
+                <!-- bootstrap -->
+                <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+                <script type="text/javascript" src="{% static 'bootstrap-addons/js/underscore.js' %}"></script>
+                <script type="text/javascript" src="{% static 'bootstrap-addons/js/bootstrap-form-input-table.js' %}"></script>
+                <script type="text/javascript" src="{% static 'bootstrap-addons/js/jquery.floatThead.js' %}"></script>
                 {% endblock bootstrap_js %}
             {% endblock js %}
+            </div>
+            <div id="javascript-external">
             {% block external_js %}
                 <!-- EXTERNAL JS -->
             {% endblock external_js %}
+            </div>
         {% endblock body %}
     </body>
 </html>
