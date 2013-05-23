@@ -1,0 +1,16 @@
+/*
+    Document   : django_boostrap
+    Created on : 23 mai 2013, 13:25:00
+    Author     : scrosta
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.form-horizontal span.help-block {
+    margin-top: 0px;
+}
+
+.help-block {
+    display: inline-block;
+}
+
