@@ -14,3 +14,6 @@
     display: inline-block;
 }
 
+.tooltip-inner {
+    max-width: 380px;
+}
