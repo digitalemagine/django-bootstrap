@@ -1,11 +1,4 @@
 #################
-# subtree-merge ignore
-#################
-
-css/psd/
-
-
-#################
 ## Eclipse
 #################
 
@@ -14,6 +7,7 @@ css/psd/
 .metadata
 bin/
 tmp/
+*_test*.*
 *.tmp
 *.bak
 *.swp
@@ -22,6 +16,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+css/psd/
 
 # External tool builders
 .externalToolBuilders/
