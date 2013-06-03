@@ -15,14 +15,17 @@ FloppyForms is a required dependency for forms (not automatically installed).
 Boostrap with Jasny
 -------------------
 
-Currently using bootstrap 2.3.1 (http://twitter.github.com/bootstrap/) with Jasny Extensions version j6 (http://jasny.github.com/bootstrap/)
+Currently using bootstrap 2.3.1 (http://twitter.github.com/bootstrap/)
+with Jasny Extensions version j6 (http://jasny.github.com/bootstrap/).
 
-Slightly modified jasny typeahead to read `target` and `source` from dataset attributes.
+Slightly modified jasny typeahead to read `target` and `source` from dataset attributes - but I suggest using Select2 instead!
 
 Django bootstrap forms with FloppyForms
 ---------------------------------------
 
-Includes out of the box support for floppyforms; just use the 'bootstrap.html' layout,
+Includes out of the box support for floppyforms.
+
+just use the 'bootstrap.html' layout,
 
 eg. by writing your own ``floppyforms/layouts/default.html`` as::
 
@@ -45,11 +48,15 @@ Select2
 -------
 
 Includes the amazing Select2 (http://ivaynberg.github.com/select2/) widget - you'll never use Bootstrap `typeahed` again.
+Plan includes adding generic views to simplify the django side of it. Ongoing, see also https://github.com/applegrew/django-select2
+
+How to use django-bootstrap
+---------------------------
+
+Just install the app and extend your templates from `bootstrap/{jasny-}base.html`
 
 Official Documentation
 ----------------------
-
-Just install the app and extend your templates from `bootstrap/{jasny-}base.html`
 
 Refer to the individual package documentations, eg. for bootstrap please see the `bootstrap official documentation`_ and `jasny bootstrap documentation`
 

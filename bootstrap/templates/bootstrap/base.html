@@ -20,6 +20,10 @@
                 {% endif %}
                 <link href="{% static 'bootstrap-addons/css/bootstrap-form-input-table.css' %}" rel="stylesheet" media="screen" />
                 <link href="{% static 'bootstrap/css/django_boostrap.css' %}" rel="stylesheet" media="screen" />
+                {% if jQueryUI.enable %}
+                <link rel="stylesheet" href="jqueryui/css/themes/{{ jQueryUI.theme }}/jquery-ui.min.css" />
+                <link rel="stylesheet" href="jqueryui/css/themes/{{ jQueryUI.theme }}/jquery-ui.theme.css" />
+                {% endif %}
                 {% endblock bootstrap_css %}
             {% endblock css %}
             {% block external_css %}
@@ -55,7 +59,10 @@
                 <script type="text/javascript" src="{% static 'javascript/js/sprintf.js' %}"></script>
                 {% endblock additional_js %}
                 {% block jquery_js %}
-                <script type="text/javascript" src="{% static 'jquery/js/jquery-1.9.1.min.js' %}"></script>
+                <script type="text/javascript" src="{% static 'jquery/js/jquery-1.10.1.min.js' %}"></script>
+                {% if jQueryUI.enable %}
+                <script type="text/javascript" src="{% static 'jqueryui/js/jquery-ui.1-10-3.full.min.js' %}"></script>
+                {% endif %}
                 {% endblock jquery_js %}
                 {% block select2 %}
                 <script type="text/javascript" src="{% static 'select2/js/select2.js' %}"></script>
