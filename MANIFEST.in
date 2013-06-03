@@ -1,4 +1,4 @@
 include AUTHORS CHANGES README INSTALL LICENCE
-recursive-include bootstrap *.py *.html *.js *.css
+recursive-include bootstrap *.py *.html *.js *.css *.png *.gif
 include docs/Makefile
 recursive-include docs/source *
