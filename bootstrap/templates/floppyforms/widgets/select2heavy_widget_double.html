@@ -2,8 +2,10 @@
     <input name="{{ name }}" type="text"
            data-provide="select2"
            data-source="{{ attrs.source }}"
+           data-target="input[name={{ name }}']"
            {% if attrs.template %}data-template="{{ attrs.template }}"{% endif %}
            {% if attrs.placeholder %}data-placeholder="{{ attrs.placeholder }}"{% endif %}
            {% if attrs.allow_clear %}data-allow-clear="true"{% endif %}
            {% if value %}value="{{ value }}"{% endif %}
            >
+<input name="{{ name }}" type="hidden" {% if value %}value="{{ value }}"{% endif %} />
