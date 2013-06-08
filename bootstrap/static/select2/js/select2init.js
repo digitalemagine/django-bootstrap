@@ -1,8 +1,18 @@
+/***
+ *
+ * inits select2 widgets using data-* attributes
+ *
+ * this can be fun and fast and very general but becomes complicated as soon
+ * as slightly different behaviour are desired - which is probably why there isn't such a think coming with select2 directly.
+ *
+ */
+
+
 (function($) {
     $.fn.select2init = function() {
         return this.each(function() {
             //Do stuff
-            $this = $(this);
+            var $this = $(this);
             function format(item) {
                 /* a real templating would be better... so that I can specify this in the html!
                  *
@@ -17,7 +27,7 @@
             var options = {};
             if ($this.data('template')) {
                 options['formatResult'] = format;
-            };
+            }
             if ($this.data('placeholder') && $this.data('allow-clear')) {
                 options['allowClear'] = true;
             } else {
@@ -36,49 +46,51 @@
                     },
                     results: function(data, page) { // parse the results into the format expected by Select2.
                         // since we are using custom formatting functions we do not need to alter remote JSON data
-                        console.log('results from ajax:', data);
                         if (data.results) {
                             return data;
                         }
                         return {results: data, more: data.length > 0};
                     }
                 };
-            }
-            options['initSelection'] = function(element, callback) {
-                /* if there's a value, select it! */
+
+                options['initSelection'] = $this.data('init-selection') === 'auto' && function(element, callback) {
+                    /* if there's a value, select it! */
 //        var data = {id: element.val(), text: element.val()};
-                if (!element.val() || element.val() === '0' || element.val() === 'None') {
-                    callback({id: 0, text: 'Tous'});
-                    return;
-                }
-                return $.ajax({
-                    type: "GET",
+                    if (!element.val() || element.val() === '0' || element.val() === 'None') {
+                        /* this was quite specific for a project */
+                        callback({id: 0, text: 'Tous'});
+                        return;
+                    }
+                    return $.ajax({
+                        type: "GET",
 //                    url: $this.data('source') + 'code:' + element.val(), /* this really depends on the backend...*/
-                    url: $this.data('source') + '?q=' + element.val(), /* this really depends on the backend...*/
-                    dataType: 'json',
-                    success: function(data) {
+                        url: $this.data('source') + (($this.data('source').indexOf('?') > -1) ? '&' : '?') + 'q=' + element.val(), /* this really depends on the backend...*/
+                        dataType: 'json',
+                        success: function(data) {
+                            /* this is unused for this task */
+                        }
+                    }).done(function(data) {
                         /*
                          * cover two most common result formats: one is simply a list of values; the second is an obj with results, error, has_more
                          *
                          */
-
+                        var result = data;
                         if (data.results) {
-                            return data.results[0];
+                            result = data.results;
                         }
-                        return data[0]; // if this does not exist, there was a bad issue!
-                    }
-                }).done(function(data) {
-                    /* weirdly or normally, I don't know, it looks like success is not used and only "done" is important - with the callback */
-                    if (data.results) {
-                        callback(data.results[0]);
-                    }
-                    callback(data[0]); /* why isn't this correct already ? */
-                });
-            };
+                        if (result.length !== 1) {
+                            console.log('Could not find a unique value for ', this.url, ', found', result.length);
+                            return null;
+                        }
+                        callback(result[0]);
+                        $this.trigger('select2-initSelection');
+                    });
+                };
+            }
             $select2 = $this.select2(options);
             if ($this.data('target')) {
                 $target = $($this.data('target'));
-                $this.on('change', function(){
+                $this.on('change', function() {
                     $target.val($this.val());
                 });
             }
