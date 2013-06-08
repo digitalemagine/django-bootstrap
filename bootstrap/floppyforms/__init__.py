@@ -7,6 +7,15 @@ Custom floppyform based widgets:
     http://django-floppyforms.readthedocs.org/en/latest/customization.html
 """
 
+class Select2Widget(forms.TextInput):
+    template_name = 'floppyforms/widgets/select2widget.html'
+
+    def get_context(self, name, value, attrs):
+        ctx = super(Select2Widget, self).get_context(name, value, attrs)
+        ctx['attrs']['data-provide'] = 'select2'
+        return ctx
+
+
 class Select2HeavyWidget(forms.TextInput):
     template_name = 'floppyforms/widgets/select2heavy_widget.html'
 
