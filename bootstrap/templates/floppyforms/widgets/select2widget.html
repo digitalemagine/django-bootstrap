@@ -1,0 +1,4 @@
+{% include "floppyforms/select.html" %}
+{% if attrs.target %}
+<input name="{{ attrs.target }}" type="hidden" {% if value %}value="{{ value }}"{% endif %} />
+{% endif %}
