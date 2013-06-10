@@ -53,7 +53,9 @@
                     }
                 };
 
-                options['initSelection'] = $this.data('init-selection') === 'auto' && function(element, callback) {
+                /* legacy - data-init-selection used to DISABLE the default init-selection when set to other than auto
+                 */
+                options['initSelection'] = (!$this.data('init-selection') || $this.data('init-selection') === 'auto') && function(element, callback) {
                     /* if there's a value, select it! */
 //        var data = {id: element.val(), text: element.val()};
                     if (!element.val() || element.val() === '0' || element.val() === 'None') {
