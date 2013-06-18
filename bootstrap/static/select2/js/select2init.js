@@ -13,12 +13,12 @@
         return this.each(function() {
             //Do stuff
             var $this = $(this);
+            var template = $this.data('template');
             function format(item) {
                 /* a real templating would be better... so that I can specify this in the html!
                  *
                  * even a simple $varname -> replace $varname...
                  */
-                var template = $this.data('template');
                 if (template) {
                     return template.replace('{id}', item.id).replace('{text}', item.text);
                 }
@@ -27,8 +27,9 @@
             var options = {};
             if ($this.data('template')) {
                 options['formatResult'] = format;
+                options['formatSelection'] = format;
             }
-            if ($this.data('placeholder') && $this.data('allow-clear')) {
+            if (($this.data('placeholder') || $this.attr('placeholder')) && $this.data('allow-clear')) {
                 options['allowClear'] = true;
             } else {
                 options['allowClear'] = false;
@@ -81,7 +82,7 @@
                             result = data.results;
                         }
                         if (result.length !== 1) {
-                            console.log('Could not find a unique value for ', this.url, ', found', result.length);
+                            console.warn('Could not find a unique value for ', this.url, ', found', result.length);
                             return null;
                         }
                         callback(result[0]);
