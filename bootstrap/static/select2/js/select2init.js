@@ -19,10 +19,10 @@
                  *
                  * even a simple $varname -> replace $varname...
                  */
-                if (template) {
+                if (template && item && item.id && item.text) {
                     return template.replace('{id}', item.id).replace('{text}', item.text);
                 }
-                return item.text;
+                return item.text || '';
             }
             var options = {};
             if ($this.data('template')) {
