@@ -2287,6 +2287,16 @@ table th[class*="span"],
   background-repeat: no-repeat;
 }
 
+/* Black (default) icons */
+.icon-black {
+  background-image: url("../img/glyphicons-halflings.png");
+}
+
+/* Gray icons */
+.icon-gray {
+  background-image: url("../img/glyphicons-halflings-gray.png");
+}
+
 /* White icons with optional class, or on hover/focus/active states of certain elements */
 
 .icon-white,
