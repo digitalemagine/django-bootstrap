@@ -76,7 +76,9 @@
                 <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
                 <script type="text/javascript" src="{% static 'bootstrap-addons/js/underscore.js' %}"></script>
                 <script type="text/javascript" src="{% static 'bootstrap-addons/js/bootstrap-form-input-table.js' %}"></script>
+                {% if FLOATTHEAD %}
                 <script type="text/javascript" src="{% static 'bootstrap-addons/js/jquery.floatThead.js' %}"></script>
+                {% endif %}
                 {% endblock bootstrap_js %}
             {% endblock js %}
             </div>
