@@ -20,6 +20,11 @@ with Jasny Extensions version j6 (http://jasny.github.com/bootstrap/).
 
 Slightly modified jasny typeahead to read `target` and `source` from dataset attributes - but I suggest using Select2 instead!
 
+Includes:
+
+ * select2
+ * tablesorter
+
 Django bootstrap forms with FloppyForms
 ---------------------------------------
 
@@ -40,12 +45,12 @@ This means that __in order to produce bootstrap forms you only need to__:
 and that's all!
 
 TableSorter is back
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 Includes out of the box support for tablesorter 2.7.1 (https://github.com/mottie/tablesorter/) with a simple, bootstrape integrated style.
 
 Select2
--------
+~~~~~~~
 
 Includes the amazing Select2 (http://ivaynberg.github.com/select2/) widget - you'll never use Bootstrap `typeahed` again.
 Plan includes adding generic views to simplify the django side of it. Ongoing, see also https://github.com/applegrew/django-select2
