@@ -1,3 +1,7 @@
+#### **I'll be on sabbitical starting June 5, 2013 for approximately 2-3 months. So, sadly, I won't be able to fix any problems or add enhancements until I return. And I will return :)**
+
+---
+
 tablesorter is a jQuery plugin for turning a standard HTML table with THEAD and TBODY tags into a sortable table without page refreshes.
 tablesorter can successfully parse and sort many types of data including linked data in a cell.
 
@@ -42,6 +46,37 @@ tablesorter can successfully parse and sort many types of data including linked 
 ### Change Log
 
 View the [complete listing here](https://github.com/Mottie/tablesorter/wiki/Change).
+
+#### <a name="v2.10.8">Version 2.10.8</a> (6/3/2013)
+
+* Updated the percent parser to only detect if the content is shorter than 15 characters. This prevents columns with a lot of content and one percent sign (%) from being set to be parsed as a percent numeric column. Fixes [issue #320](https://github.com/Mottie/tablesorter/issues/320).
+* Updated filter widget &amp; filter_formatter:
+  * Added a new `filter_defaultAttrib` which points to the default `'data-value'` attribute in the table header which will contain the filter's default (starting) value and *will override* any set values within the filter_formatter functions. Updated the [custom filter widget function demo age column](http://mottie.github.io/tablesorter/docs/example-widget-filter-custom.html) to show this in action.
+  * The `$.tablesorter.setFilter()` method now properly updates the filter formatter elements when set.
+  * The `uiDateCompare` and `uiDatepicker` functions now adds a time of 11:59:59 to the "to" date or when a "less than" comparison is made so as to include all times within that selected day.
+  * The `defaultDate` option (not `date` option, sorry) of the `uiDateCompare` now properly sets the value upon initialization.
+  * The `from` and `to` options of the `uiDatepicker` now properly sets those values properly upon initialization.
+  * Fixes [issue #321](https://github.com/Mottie/tablesorter/issues/321).
+* Fixed stickyHeaders widget:
+  * When removing a sticky headers widget, it no longer unbinds scrolling when other sticky headers are still active.
+  * Added `stickyHeaders_includeCaption` option (set as `true` by default). When this option is `false` and a caption exists, it will not be included in teh sticky header. Fixes [issue #322](https://github.com/Mottie/tablesorter/issues/322).
+
+#### <a name="v2.10.7">Version 2.10.7</a> (5/31/2013)
+
+* Now using correct `closest()` function equivalent. Thanks to [isuTony](https://github.com/isuTony); Fixes [issue #319](https://github.com/Mottie/tablesorter/issues/319).
+* Anticipating my sabbitical, I've added a few "beta-testing" scripts into a new folder for feedback, code fixes and help:
+    * [Custom pager control script](http://mottie.github.io/tablesorter/beta-testing/example-pager-custom-controls.html) - should be working properly.
+    * [External filters using Select2 plugin](http://mottie.github.io/tablesorter/beta-testing/example-external-filters-using-select2.html) - should be working properly.
+    * [Column reorder widget](http://mottie.github.io/tablesorter/beta-testing/example-widget-column-reorder.html) - not working 100% with sticky headers.
+    * [Column sum widget](http://mottie.github.io/tablesorter/beta-testing/example-widget-sum-columns.html) - still needs LOTS of work!
+
+#### <a name="v2.10.6">Version 2.10.6</a> (5/30/2013)
+
+* Added `skipTest` options to the HTML5 filter formatter functions. Fixes [issue #307](https://github.com/Mottie/tablesorter/issues/307).
+
+#### <a name="v2.10.5">Version 2.10.5</a> (5/30/2013)
+
+* Filter formatter functions now works properly within sticky headers. Fixes issues [#290](https://github.com/Mottie/tablesorter/issues/290) &amp; [#317](https://github.com/Mottie/tablesorter/issues/317).
 
 #### <a name="v2.10.4">Version 2.10.4</a> (5/28/2013)
 
