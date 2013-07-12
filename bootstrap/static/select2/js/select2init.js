@@ -22,7 +22,7 @@
                 if (template && item && item.id && item.text) {
                     return template.replace('{id}', item.id).replace('{text}', item.text);
                 }
-                return item.text || '';
+                return (item && item.text) || '';
             }
             var options = {};
             if ($this.data('template')) {
@@ -30,10 +30,18 @@
                 options['formatSelection'] = format;
             }
             if (($this.data('placeholder') || $this.attr('placeholder')) && $this.data('allow-clear')) {
+                /* there's no "data-allow-clear", so we add it ourselves */
                 options['allowClear'] = true;
             } else {
                 options['allowClear'] = false;
             }
+            if ($this.data('placeholder-option')) {
+                options['placeholderOption'] = $this.data('placeholder-option');
+            }
+            if ($this.data('width')) {
+                options['width'] = ($this.data('width'))==='copy' ? $this.css('width') : $this.data('width');
+            }
+            console.log(':::'+options['width']);
             if ($this.data('source')) {
                 options['ajax'] = {
                     url: $this.data('source'),
@@ -60,8 +68,7 @@
                     /* if there's a value, select it! */
 //        var data = {id: element.val(), text: element.val()};
                     if (!element.val() || element.val() === '0' || element.val() === 'None') {
-                        /* this was quite specific for a project */
-                        callback({id: 0, text: 'Tous'});
+                        callback({id: 0, text: options['placeholder']});
                         return;
                     }
                     return $.ajax({
