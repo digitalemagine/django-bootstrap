@@ -41,7 +41,6 @@
             if ($this.data('width')) {
                 options['width'] = ($this.data('width'))==='copy' ? $this.css('width') : $this.data('width');
             }
-            console.log(':::'+options['width']);
             if ($this.data('source')) {
                 options['ajax'] = {
                     url: $this.data('source'),
