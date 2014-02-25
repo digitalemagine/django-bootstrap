@@ -2057,10 +2057,11 @@ the specific language governing permissions and limitations under the Apache Lic
 
         isPlaceholderOptionSelected: function() {
             var placeholderOption;
-            return ((placeholderOption = this.getPlaceholderOption()) !== undefined && placeholderOption.is(':selected')) ||
+            var result = this.opts.placeholder && ((placeholderOption = this.getPlaceholderOption()) !== undefined && placeholderOption.is(':selected')) ||
                    (this.opts.element.val() === "") ||
                    (this.opts.element.val() === undefined) ||
                    (this.opts.element.val() === null);
+           return result;
         },
 
         // single

@@ -54,6 +54,10 @@ $.floatThead = {
 
 var $window = $(window);
 var floatTheadCreated = 0;
+$.browser = {
+    mozilla: true,
+    msie: false,
+}
 var ie = $.browser.msie;
 /**
  * debounce and fix window resize event for ie7. ie7 is evil and will fire window resize event when ANY dom element is resized.

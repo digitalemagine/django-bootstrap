@@ -4,7 +4,7 @@ from setuptools import find_packages
 
 setup(
     name='django-bootstrap',
-    version='1.2:2.3.1-j6', # combined versions :)  -- my own, bootstrap, jasny.
+    version='1.3:2.3.1-j6', # combined versions :)  -- my own, bootstrap, jasny.
     author=u'Stefano Crosta',
     author_email='stefano@digitalemagine.com',
     packages=find_packages(),

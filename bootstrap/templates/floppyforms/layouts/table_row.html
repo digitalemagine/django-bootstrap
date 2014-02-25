@@ -1,0 +1,13 @@
+{% extends "floppyforms/layouts/table.html" %}
+{% load floppyforms %}{% block formconfig %}{% formconfig row using "floppyforms/rows/td.html" %}{% endblock %}
+
+{% block rows %}<tr>{{ block.super }}</tr>{% endblock rows %}
+
+{% block forms %}
+<thead><tr>
+        {% for field in forms.0.visible_fields %}
+        <th>{{ field.label|default:"field label" }}</th>
+        {% endfor %}
+    </tr></thead>
+{{ block.super }}
+{% endblock forms %}

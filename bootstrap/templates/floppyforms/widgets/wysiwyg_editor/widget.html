@@ -1,0 +1,4 @@
+<div>
+{% include "floppyforms/widgets/wysiwyg_editor/toolbar_bootstrap.html" %}
+<div name="{{ name }}"{% if required %} required{% endif %}{% include "floppyforms/attrs.html" %}>{% if value %}{{ value|safe }}{% endif %}</div>
+</div>
